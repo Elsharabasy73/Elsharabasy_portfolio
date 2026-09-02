@@ -12,6 +12,7 @@ import {
   Calendar
 } from 'lucide-react';
 import { PERSONAL_INFO, SKILL_CATEGORIES } from '../data/portfolioData';
+import { TechIcon } from './TechIcons';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -138,15 +139,18 @@ export const AboutSection: React.FC = () => {
                   {cat.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2.5">
                   {cat.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs font-mono border border-zinc-200 dark:border-zinc-700/60 flex items-center gap-1.5"
+                      className="flex items-center px-3.5 py-2 bg-zinc-100/90 dark:bg-zinc-800/80 rounded-xl text-zinc-800 dark:text-zinc-200 text-xs font-medium border border-zinc-200/90 dark:border-zinc-700/60 hover:bg-zinc-200/80 dark:hover:bg-zinc-700/90 transition-all duration-200 group hover:scale-[1.03] shadow-2xs"
                     >
-                      <span className="font-medium">{skill.name}</span>
+                      <span className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center shrink-0">
+                        <TechIcon name={skill.name} className="w-5 h-5 rounded-xs" />
+                      </span>
+                      <span className="font-medium font-sans">{skill.name}</span>
                       {skill.level === 'Core' && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" title="Core Production Skill"></span>
+                        <span className="ml-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" title="Core Production Skill"></span>
                       )}
                     </div>
                   ))}

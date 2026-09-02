@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { TerminalConsole } from './TerminalConsole';
+import { ProgrammingVisualCard } from './ProgrammingVisualCard';
 
 export const HeroSection: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -168,52 +169,26 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Headshot or Interactive Terminal (5 cols) */}
+        {/* Right Column: Programming Visualizer or Interactive Terminal (5 cols) */}
         <div className="lg:col-span-5 flex flex-col items-center lg:items-end w-full">
           {showEmbeddedTerminal ? (
             <div className="w-full animate-in fade-in zoom-in-95 duration-200">
+              <div className="flex items-center justify-between pb-2 mb-1">
+                <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                  ~/portfolio-cli (interactive)
+                </span>
+                <button
+                  onClick={() => setShowEmbeddedTerminal(false)}
+                  className="text-xs font-mono text-emerald-600 dark:text-emerald-400 hover:underline inline-flex items-center gap-1 cursor-pointer"
+                >
+                  <span>&larr; Switch to Code / Architecture View</span>
+                </button>
+              </div>
               <TerminalConsole />
             </div>
           ) : (
-            <div className="relative w-full max-w-sm sm:max-w-md">
-              {/* Geometric Engineering Frame */}
-              <div className="relative rounded-2xl overflow-hidden border-2 border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-xl p-3">
-                {/* Photo Header Tag */}
-                <div className="flex items-center justify-between pb-2 mb-2 border-b border-zinc-100 dark:border-zinc-800 text-[11px] font-mono text-zinc-500 dark:text-zinc-400">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                    ENGINEER_ID: AE-73
-                  </span>
-                  <span>PORT SAID UNIV '24</span>
-                </div>
-
-                <div className="relative w-full aspect-4/5 rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800">
-                  <img
-                    src={PERSONAL_INFO.headshotUrl}
-                    alt={PERSONAL_INFO.name}
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                    loading="eager"
-                  />
-                  
-                  {/* Overlay Badge */}
-                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-zinc-950/80 backdrop-blur-md border border-zinc-800/80 text-white font-mono text-xs">
-                    <div className="font-bold text-zinc-100">{PERSONAL_INFO.name}</div>
-                    <div className="text-[11px] text-zinc-400">B.Sc. Computer Engineering (84.88%)</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Teaser Pill to open Terminal */}
-              <div className="mt-3 text-center">
-                <button
-                  onClick={() => setShowEmbeddedTerminal(true)}
-                  className="text-xs text-zinc-500 dark:text-zinc-400 hover:text-emerald-500 font-mono inline-flex items-center gap-1.5 transition-colors cursor-pointer"
-                >
-                  <TerminalIcon className="w-3 h-3" />
-                  <span>Click to launch interactive CLI terminal</span>
-                </button>
-              </div>
+            <div className="w-full animate-in fade-in zoom-in-95 duration-200">
+              <ProgrammingVisualCard onOpenTerminal={() => setShowEmbeddedTerminal(true)} />
             </div>
           )}
         </div>

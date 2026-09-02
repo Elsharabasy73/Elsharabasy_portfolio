@@ -20,7 +20,6 @@ export const PERSONAL_INFO = {
   githubUsername: "github.com/Elsharabasy73",
   linkedin: "https://www.linkedin.com/in/elsharabasy73",
   livePortfolio: "https://kayanmodern.com",
-  headshotUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPrfK_7YUdQE4E3r5bv_Lyeol8cMaQdn2R8Ht2rGOr41Ae_njbijqV1ov7V2XnKJXE5y9HdVYeJdmKsu1tbDvIoa9Y3Vv60ks6Ro7J1iqHLyjJ9mNGd8pxb5kXUNllYTyRw072rWan3dV80-DTCLerO5724FvPu25jv_IAR5iKbVkQ2a9iMBCmlgf81NNrVxRyM4M7SA5wZfBK2VU3Yx-PAqlfdjuWaZXfquKhHjrN3leZO11hyJJy",
   education: {
     degree: "B.Sc. Computer Engineering",
     period: "2019 – 2024",
