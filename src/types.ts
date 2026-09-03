@@ -57,6 +57,7 @@ export interface ExperienceItem {
   location?: string;
   period: string;
   liveUrl?: string;
+  githubUrl?: string;
   tags: string[];
   imageUrl?: string;
   points: string[];

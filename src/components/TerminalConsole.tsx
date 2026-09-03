@@ -176,6 +176,33 @@ export const TerminalConsole: React.FC<TerminalConsoleProps> = () => {
         );
         break;
 
+      case 'curl maxtech':
+      case 'curl https://nadershop-topaz.vercel.app/':
+        output = (
+          <div className="space-y-1 font-mono text-xs p-3 rounded bg-black/60 border border-emerald-950/80 text-emerald-300">
+            <p className="text-zinc-400">&gt; GET /api/products HTTP/2</p>
+            <p className="text-zinc-400">&gt; Host: nadershop-topaz.vercel.app</p>
+            <p className="text-zinc-400">&gt; User-Agent: curl/8.4.0</p>
+            <p className="text-zinc-500 py-1">----------------------------------------</p>
+            <p className="text-emerald-400 font-bold">&lt; HTTP/2 200 OK</p>
+            <p className="text-zinc-400">&lt; server: Vercel Edge</p>
+            <p className="text-zinc-400">&lt; content-type: application/json; charset=utf-8</p>
+            <p className="text-zinc-400">&lt; x-vercel-cache: HIT</p>
+            <div className="mt-2 p-2 bg-zinc-950 rounded text-cyan-300">
+              {JSON.stringify({
+                platform: "MAX TECH (HappyShop)",
+                liveUrl: "https://nadershop-topaz.vercel.app/",
+                repo: "https://github.com/Elsharabasy73/shoppay",
+                status: "active",
+                catalog: "Computer hardware, peripherals & accessories",
+                features: ["Order Management", "Discount Coupons", "User Permissions", "Stock Tracking"],
+                backend: "Node.js + Express + MongoDB Atlas"
+              }, null, 2)}
+            </div>
+          </div>
+        );
+        break;
+
       case 'cat caddyfile':
         output = (
           <div className="p-3 rounded bg-black/70 border border-zinc-800 text-xs font-mono space-y-1 text-zinc-300">

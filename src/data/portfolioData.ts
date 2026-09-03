@@ -1,4 +1,6 @@
 import { Project, Certification, SkillCategory, ExperienceItem, ArchitectureDiagram } from '../types';
+import kayanImage from '../assets/images/kayan.jpg';
+import maxtechImage from '../assets/images/maxtech.jpg';
 
 export const PERSONAL_INFO = {
   name: "Abd El-Rahman Elsharabasy",
@@ -107,12 +109,12 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     id: "kayan-modern",
     role: "Lead Backend Developer & Cloud Architect",
     company: "Kayan Modern Furniture Platform",
-    type: "Production Freelance Contract",
+    type: "Production Commercial Deployment",
     location: "Damietta, Egypt",
     period: "09/2024 – Present",
     liveUrl: "https://kayanmodern.com",
     tags: ["Node.js", "Express.js", "MongoDB Atlas", "Azure VM", "AWS S3", "Caddy", "systemd", "React.js"],
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDflsww8iNP10DMf2KJrEKcpeWa9QGZmj0RFjM73fWpp2lLzpSlxT-anyjz1EUG7F9w4vJ2RV-7fwv_M2jlBKug5mv05huP1hwazhF9VSSePXmslBPVcfUwebSnzT8VdVKszgQumHtIY0xNweASg5V1Vd2DGNe8BugBVOFU_aZNLslNKkQYkShRSJ3qrRPgJbS4Dd5h3xhxoIm_DchuO9ZorKFl7pJpwbrrgNor3poRU2T5s7EwQcRAqchZjXxoJ8Kvw",
+    imageUrl: kayanImage,
     points: [
       "Architected and delivered the complete backend infrastructure: 30+ RESTful endpoints handling catalogs, promotional offers, media uploads, and administrative control panels.",
       "Engineered an enterprise-grade admin authentication flow featuring single-device session invalidation to prevent credential sharing and automated daily cloud database snapshot backups.",
@@ -139,6 +141,44 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
       { layer: "Cloud Hosting", technologies: "Azure Linux VM (Ubuntu 22.04 LTS), AWS S3" },
       { layer: "Web Server & SSL", technologies: "Caddy Server v2 (Automatic Let's Encrypt TLS & HTTP/2)" },
       { layer: "Process Control", technologies: "systemd unit files with journalctl logging" }
+    ]
+  },
+  {
+    id: "maxtech-ecommerce",
+    role: "Full-Stack Backend Architect & Developer",
+    company: "MAX TECH — HappyShop Platform",
+    type: "Commercial Production Platform",
+    location: "Egypt (Remote / Production)",
+    period: "2024 – Present",
+    liveUrl: "https://nadershop-topaz.vercel.app/",
+    githubUrl: "https://github.com/Elsharabasy73/shoppay",
+    imageUrl: maxtechImage,
+    tags: ["Node.js", "Express.js", "MongoDB Atlas", "React.js", "Redux Toolkit", "JWT Auth", "Vercel", "Tailwind CSS", "RESTful API"],
+    points: [
+      "Architected and deployed an end-to-end commercial electronics & computer hardware e-commerce platform with a comprehensive bilingual store catalog.",
+      "Engineered an extensive administration back-office suite featuring live order fulfillment, coupon/discount engines, inventory tracking, and granular user management.",
+      "Constructed secure REST API micro-services with JWT authentication guards, input sanitation, transactional stock decrementing, and role-based permissions.",
+      "Built responsive, interactive frontend client and admin dashboard with React and Redux Toolkit, deployed to high-availability global CDN on Vercel.",
+      "Optimized query performance for high-concurrency catalog queries using compound indexes in MongoDB Atlas, achieving sub-40ms response times."
+    ],
+    architectureOverview: [
+      "Vercel Edge CDN delivers optimized React SPA frontend with client-side Redux store",
+      "Express REST API server handles catalog queries, shopping carts, and order life cycles",
+      "JWT-based role-based access control guards administrative and order routes",
+      "MongoDB Atlas database cluster stores schemas for products, brands, categories, orders, and coupons"
+    ],
+    architectureHighlights: [
+      { label: "Backend Core", val: "Node.js · Express.js REST" },
+      { label: "Admin & Client UI", val: "React · Redux Toolkit" },
+      { label: "Database", val: "MongoDB Atlas Cluster" },
+      { label: "Production Deployment", val: "Vercel + Cloud API" }
+    ],
+    techStackBreakdown: [
+      { layer: "API & Runtime", technologies: "Node.js, Express.js, JWT, RESTful Architecture" },
+      { layer: "Database Layer", technologies: "MongoDB Atlas, Mongoose schemas, compound indexes" },
+      { layer: "User Interface", technologies: "React, Redux Toolkit, Tailwind CSS, Responsive Admin Panel" },
+      { layer: "Store Modules", technologies: "Order Pipeline, Discount Coupons, Brand/Category Taxonomy" },
+      { layer: "Deployment", technologies: "Vercel Cloud Hosting, Git CI/CD" }
     ]
   }
 ];
@@ -203,10 +243,10 @@ export const requireRoles = (...allowedRoles: Role[]) => {
   },
   {
     id: "shoppay-api",
-    title: "ShopPay — Resilient E-Commerce API",
-    subtitle: "Clean Architecture REST Backend",
-    category: "Backend API",
-    description: "Enterprise-grade layered e-commerce API featuring dual payment gateways (Stripe & Paymob), transactional order processing, automated stock reservation, and automated testing.",
+    title: "MAX TECH (ShopPay) — E-Commerce Platform & API",
+    subtitle: "Clean Architecture REST Backend & Admin Portal",
+    category: "Full-Stack",
+    description: "Enterprise-grade layered e-commerce platform featuring dual payment gateways (Stripe & Paymob), transactional order processing, automated stock reservation, discount coupons, and complete administrative control panel.",
     architectureHighlights: [
       {
         title: "Clean Service-Repository Pattern",
@@ -221,13 +261,14 @@ export const requireRoles = (...allowedRoles: Role[]) => {
     ],
     highlights: [
       "Layered architecture with dedicated services, controllers, and repository abstractions",
+      "Comprehensive admin dashboard for inventory, category taxonomy, and order status",
       "Stripe and Paymob dual payment integration with cryptographically signed webhooks",
-      "Atomic transaction locking for inventory deduction during checkout",
-      "GitHub Actions workflow for automated linting, unit tests, and continuous deployment"
+      "Atomic transaction locking for inventory deduction during checkout"
     ],
-    tags: ["Node.js", "Express.js", "MongoDB", "Stripe API", "Paymob", "Jest", "CI/CD"],
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCo4WUQpuNT6U26gGynpAxEMijB4x0-a2cQSMKeK3fNqFnK6Kcl4egVLQQk-_HXaqRBkvC0q2WMcGBO4L1AluTFbR4OFMQ0SOpuiglivIjk5Rr4ZyNVo2ebu3gQt_Bs1vXuNRcDhLNIFpxcxQqsQeqWjBMAgZ2IXd8vfmpWjXHmTmbdN671vgx3WVIf3Erf6KTIiKi_3sod-58qgBLXMH1SRCHSozGZq8u_7iMYy-MNoWumRFhlebmG",
-    githubUrl: "https://github.com/Elsharabasy73",
+    tags: ["Node.js", "Express.js", "MongoDB", "React", "Redux", "Stripe API", "Paymob", "Vercel"],
+    imageUrl: maxtechImage,
+    githubUrl: "https://github.com/Elsharabasy73/shoppay",
+    liveUrl: "https://nadershop-topaz.vercel.app/",
     metrics: [
       { label: "Payment Providers", value: "Stripe + Paymob" },
       { label: "Test Coverage", value: "Automated CI" },
@@ -460,6 +501,25 @@ export const ARCHITECTURE_DIAGRAMS: ArchitectureDiagram[] = [
       "4. Cache misses query PostgreSQL via Prisma ORM and populate Redis with dynamic TTL",
       "5. Mutations trigger cache invalidation and atomic database transactions"
     ]
+  },
+  {
+    id: "maxtech-ecommerce-arch",
+    name: "MAX TECH (ShopPay) Store & Admin Pipeline",
+    description: "End-to-end commercial store architecture: Vercel CDN frontend, Redux state, Express REST API, and MongoDB Atlas.",
+    nodes: [
+      { id: "m1", label: "Shopper & Admin Traffic", type: "client", subtext: "Storefront & Admin Dashboard" },
+      { id: "m2", label: "Vercel Edge Global CDN", type: "gateway", subtext: "React SPA & Redux Toolkit Store" },
+      { id: "m3", label: "Express RESTful API", type: "app", subtext: "JWT Guards, Cart & Orders" },
+      { id: "m4", label: "Coupon & Inventory Engine", type: "cache", subtext: "Atomic stock reservation" },
+      { id: "m5", label: "MongoDB Atlas Cluster", type: "database", subtext: "Products, Brands & Orders" }
+    ],
+    flowSteps: [
+      "1. Customer navigates catalog or admin accesses dashboard via Vercel Edge CDN",
+      "2. Redux Toolkit dispatches asynchronous thunks to Express REST API endpoints",
+      "3. Protected administrative actions (coupons, product updates) validated via JWT auth tokens",
+      "4. Order checkout triggers atomic inventory validation and coupon discount application",
+      "5. MongoDB Atlas commits records with compound indexing for instant catalog search"
+    ]
   }
 ];
 
@@ -471,6 +531,7 @@ export const TERMINAL_COMMANDS_HELP = [
   { cmd: "experience", desc: "Show professional timeline and cloud deployments" },
   { cmd: "arch", desc: "View system architecture topologies" },
   { cmd: "curl kayanmodern", desc: "Execute simulated live health check on Kayan Modern API" },
+  { cmd: "curl maxtech", desc: "Query live API & specs for MAX TECH platform" },
   { cmd: "cat caddyfile", desc: "Inspect real production Caddyfile configuration" },
   { cmd: "cat systemd", desc: "View production Linux systemd service unit file" },
   { cmd: "contact", desc: "Show direct contact endpoints & email" },
